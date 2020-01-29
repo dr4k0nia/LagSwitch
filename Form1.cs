@@ -86,8 +86,8 @@ namespace LagSwitch
             {
                 //This is the main path of our Lagswitch we are adding firewall rules to block traffic of our game executable
                 //This can obviously be improved a lot, just take a look at the arguments ;)
-                ProcessStartInfo AddRuleIn = new ProcessStartInfo("cmd.exe", "/c netsh dvfirewall firewall add rule name=\"UCLagSwitch\" dir=in action=block program=\"" + gamepath + "\" enable=yes");
-                ProcessStartInfo AddRuleOut = new ProcessStartInfo("cmd.exe", "/c netsh dvfirewall firewall add rule name=\"UCLagSwitch\" dir=out action=block program=\"" + gamepath + "\" enable=yes");
+                ProcessStartInfo AddRuleIn = new ProcessStartInfo("cmd.exe", "/c netsh advfirewall firewall add rule name=\"UCLagSwitch\" dir=in action=block program=\"" + gamepath + "\" enable=yes");
+                ProcessStartInfo AddRuleOut = new ProcessStartInfo("cmd.exe", "/c netsh advfirewall firewall add rule name=\"UCLagSwitch\" dir=out action=block program=\"" + gamepath + "\" enable=yes");
                 ProcessStartInfo DeleteRule = new ProcessStartInfo("cmd.exe", "/c netsh advfirewall firewall delete rule name=\"UCLagSwitch\" program=\"" + gamepath + "\"");
 
                 //Use WindowStyle Hidden to hide the command line windows
